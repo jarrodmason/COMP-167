@@ -1,0 +1,551 @@
+package AndreJarrodMasonMajorProgramThree;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+
+public class scientificCalc {
+
+
+	
+	private JFrame frame;
+	private JTextField textField;
+	JLabel scnientificCalc = new JLabel("CI- Calculator");
+	JFrame mainFrame = new JFrame("CI- Calculator");
+	double userNum1 = 0;
+	double userNum2 = 0;
+	double finalResult = 0;
+	String userOperation;
+	String stringAnswer;
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					scientificCalc window = new scientificCalc();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public scientificCalc() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBackground(new Color(54, 255, 36));
+		textField.setBounds(21, 24, 410, 47);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton sevenButton = new JButton("7");
+		sevenButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + sevenButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		sevenButton.setBounds(21, 105, 61, 29);
+		frame.getContentPane().add(sevenButton);
+		
+		
+		JButton fourButton = new JButton("4");
+		fourButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + fourButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		fourButton.setBounds(21, 131, 61, 29);
+		frame.getContentPane().add(fourButton);
+		
+		JButton zeroButton = new JButton("0");
+		zeroButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + zeroButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		zeroButton.setBounds(21, 179, 61, 29);
+		frame.getContentPane().add(zeroButton);
+		
+		JButton decimalButton = new JButton(".");
+		decimalButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + decimalButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		decimalButton.setBounds(69, 179, 61, 29);
+		frame.getContentPane().add(decimalButton);
+		
+		JButton nineButton = new JButton("9");
+		nineButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + nineButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		nineButton.setBounds(119, 105, 61, 29);
+		frame.getContentPane().add(nineButton);
+		
+		JButton twoButton = new JButton("2");
+		twoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + twoButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		twoButton.setBounds(69, 156, 61, 29);
+		frame.getContentPane().add(twoButton);
+		
+		
+		
+		JButton fiveButton = new JButton("5");
+		fiveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + fiveButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		fiveButton.setBounds(69, 131, 61, 29);
+		frame.getContentPane().add(fiveButton);
+		
+		JButton eightButton = new JButton("8");
+		eightButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + eightButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		eightButton.setBounds(69, 105, 61, 29);
+		frame.getContentPane().add(eightButton);
+		
+		JButton threeButton = new JButton("3");
+		threeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + threeButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		threeButton.setBounds(119, 156, 61, 29);
+		frame.getContentPane().add(threeButton);
+		
+		JButton sixButton = new JButton("6");
+		sixButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + sixButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		sixButton.setBounds(119, 131, 61, 29);
+		frame.getContentPane().add(sixButton);
+		
+		JButton plusMinus = new JButton("plus/minus");
+		plusMinus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + plusMinus.getText();
+				textField.setText(newNumber);
+			}
+		});
+		frame.getContentPane().add(plusMinus);
+		
+		JButton btnNewButton_2_3_4 = new JButton("1/n");
+		btnNewButton_2_3_4.setBounds(173, 179, 61, 29);
+		frame.getContentPane().add(btnNewButton_2_3_4);
+		
+		JButton equalButton = new JButton("=");
+		equalButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userNum2 = Double.parseDouble(textField.getText());
+				if(userOperation == "+") {
+					finalResult = userNum1 + userNum2;
+					stringAnswer = String.format("%.2f",finalResult);
+					textField.setText(stringAnswer);
+					
+				}
+				else if(userOperation == "-") {
+					finalResult = userNum1 - userNum2;
+					stringAnswer = String.format("%.2f",finalResult);
+					textField.setText(stringAnswer);
+				}
+				else if(userOperation == "/") {
+					finalResult = userNum1 / userNum2;
+					stringAnswer = String.format("%.2f",finalResult);
+					textField.setText(stringAnswer);
+				}
+				else if(userOperation == "*") {
+					finalResult = userNum1 * userNum2;
+					stringAnswer = String.format("%.2f",finalResult);
+					textField.setText(stringAnswer);
+				}
+				else if(userOperation == "%") {
+					finalResult = userNum1 % userNum2;
+					stringAnswer = String.format("%.2f",finalResult);
+					textField.setText(stringAnswer);
+				}
+				else if (userOperation == "Mod") {
+					finalResult = userNum1 % userNum2;
+					stringAnswer = String.format("%.2f",finalResult);
+					textField.setText(stringAnswer);
+				}
+				else if(userOperation == "x^2") {
+					finalResult = Math.pow(userNum1,2);
+					stringAnswer = String.format("%.2f",finalResult);
+					textField.setText(stringAnswer);
+				}
+				else if(userOperation == "x^3") {
+					finalResult = Math.pow(userNum1,userNum2);
+					stringAnswer = String.format("%.2f",finalResult);
+					textField.setText(stringAnswer);
+				}
+			}
+		});
+		
+		equalButton.setBounds(173, 156, 111, 29);
+		frame.getContentPane().add(equalButton);
+		
+		JButton percentages = new JButton("%");
+		percentages.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userNum1 = Double.parseDouble(textField.getText());
+				textField.setText("");
+				userOperation = "%";
+
+			}
+		});
+		percentages.setBounds(223, 179, 61, 29);
+		frame.getContentPane().add(percentages);
+		
+		JButton add = new JButton("+");
+		add.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userNum1 = Double.parseDouble(textField.getText());
+				textField.setText("");
+				userOperation = "+";
+			}
+		});
+		add.setBounds(173, 131, 61, 29);
+		frame.getContentPane().add(add);
+		
+
+		JButton subtract = new JButton("-");
+		subtract.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userNum1 = Double.parseDouble(textField.getText());
+				textField.setText("");
+				userOperation = "-";
+
+			}
+		});
+		subtract.setBounds(223, 131, 61, 29);
+		frame.getContentPane().add(subtract);
+		
+		JButton multiply = new JButton("*");
+		multiply.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userNum1 = Double.parseDouble(textField.getText());
+				textField.setText("");
+				userOperation = "*";
+
+			}
+		});
+		multiply.setBounds(173, 105, 61, 29);
+		frame.getContentPane().add(multiply);
+		
+		JButton divide = new JButton("/");
+		divide.setBounds(223, 105, 61, 29);
+		divide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userNum1 = Double.parseDouble(textField.getText());
+				textField.setText("");
+				userOperation = "/";
+
+			}
+		});
+		frame.getContentPane().add(divide);
+		
+		JButton clearButton = new JButton("C");
+		clearButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText(null);
+			}
+		});
+		clearButton.setBounds(370, 76, 61, 29);
+		frame.getContentPane().add(clearButton);
+		
+		JButton square = new JButton("x^2");
+		square.addActionListener(new ActionListener(){
+		public void actionPerformed(ActionEvent e) {
+			double newNumber = Double.parseDouble(textField.getText());
+			Math.pow(newNumber, 2);
+			textField.setText("");
+}
+		});
+		
+		square.setBounds(370, 105, 61, 29);
+		frame.getContentPane().add(square);
+		
+		JButton cubed = new JButton("x^3");
+		square.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Double.parseDouble(textField.getText());
+				Math.pow(newNumber, 2);
+
+				textField.setText("");
+				userOperation = "x^3";
+			}
+			});
+			
+		cubed.setBounds(370, 131, 61, 29);
+		frame.getContentPane().add(cubed);
+		
+		JButton modulo = new JButton("Mod");
+		modulo.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			userNum1 = Double.parseDouble(textField.getText());
+			textField.setText("");
+			userOperation = "Mod";
+
+		}
+		});
+		
+		modulo.setBounds(370, 156, 61, 29);
+		frame.getContentPane().add(modulo);
+		
+		JButton squareRoot = new JButton("√");
+		squareRoot.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.sqrt(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+			}
+			});
+			
+		
+		
+		squareRoot.setBounds(370, 179, 61, 29);
+		frame.getContentPane().add(squareRoot);
+		
+		JButton sinButton = new JButton("sin");
+		sinButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.sin(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		sinButton.setBounds(21, 207, 61, 29);
+		frame.getContentPane().add(sinButton);
+		
+		JButton cosButton = new JButton("cos");
+		cosButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.cos(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		cosButton.setBounds(69, 207, 61, 29);
+		frame.getContentPane().add(cosButton);
+		
+		JButton tanButton = new JButton("tan");
+		tanButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.tan(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		tanButton.setBounds(119, 207, 61, 29);
+		frame.getContentPane().add(tanButton);
+		
+		JButton logButton = new JButton("log");
+		logButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.log(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		logButton.setBounds(173, 207, 61, 29);
+		frame.getContentPane().add(logButton);
+		
+		JButton lnButton = new JButton("ln");
+		sinButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = (Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		lnButton.setBounds(223, 207, 61, 29);
+		frame.getContentPane().add(lnButton);
+		
+		JButton asinButton = new JButton("asin");
+		asinButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.asin(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		asinButton.setBounds(277, 105, 54, 29);
+		frame.getContentPane().add(asinButton);
+		
+		JButton tenButton = new JButton("10^n");
+		tenButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = (Math.pow(10, Double.parseDouble(textField.getText())));
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		tenButton.setBounds(370, 207, 61, 29);
+		frame.getContentPane().add(tenButton);
+		
+		JButton acos = new JButton("acos");
+		acos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.acos(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		acos.setBounds(320, 105, 54, 29);
+		frame.getContentPane().add(acos);
+		
+		JButton atan = new JButton("atan");
+		atan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.atan(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		atan.setBounds(277, 131, 54, 29);
+		frame.getContentPane().add(atan);
+		
+		JButton abs = new JButton("abs");
+		abs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Double.parseDouble(textField.getText());
+				newNumber = Math.abs(newNumber);
+				
+				
+		textField.setText("");
+		textField.setText(textField.getText() + newNumber);
+		
+	}
+});
+		abs.setBounds(320, 131, 54, 29);
+		frame.getContentPane().add(abs);
+		
+		JButton sinh = new JButton("sinh");
+		sinh.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.sinh(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		sinh.setBounds(277, 156, 54, 29);
+		frame.getContentPane().add(sinh);
+		
+		JButton cosh = new JButton("cosh");
+		cosh.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.cosh(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		cosh.setBounds(320, 156, 54, 29);
+		frame.getContentPane().add(cosh);
+		
+		JButton tanh = new JButton("tanh");
+		tanh.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Math.tanh(Double.parseDouble(textField.getText()));
+				textField.setText("");
+				textField.setText(textField.getText() + newNumber);
+				
+			}
+		});
+		tanh.setBounds(296, 179, 54, 29);
+		frame.getContentPane().add(tanh);
+		
+		JButton exitButton = new JButton("EXIT");
+		exitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText("Aggie Pride!");
+				System.exit(0);
+			}
+		});
+		
+		exitButton.setBounds(277, 207, 111, 29);
+		frame.getContentPane().add(exitButton);
+		
+		JButton oneButton = new JButton("1");
+		oneButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String newNumber = textField.getText() + oneButton.getText();
+				textField.setText(newNumber);
+			}
+		});
+		oneButton.setBounds(21, 156, 61, 29);
+		frame.getContentPane().add(oneButton);
+		
+		JButton plusMinus2 = new JButton("+/-");
+		plusMinus2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double newNumber = Double.parseDouble(String.valueOf(textField.getText()));
+				newNumber = newNumber * -1;
+				textField.setText(String.valueOf(newNumber));
+			}
+		});
+		plusMinus2.setBounds(119, 179, 61, 29);
+		frame.getContentPane().add(plusMinus2);
+		
+		JLabel lblNewLabel = new JLabel("Jarrod's Calculator");
+		lblNewLabel.setBounds(186, 6, 151, 16);
+		frame.getContentPane().add(lblNewLabel);
+		
+	}
+}
